@@ -66,6 +66,18 @@ public class Repository {
         }
     }
 
+    public List<Excursion>getAllExcursions(){
+        databaseExecutor.execute(()->{
+            mAllExcursions=mExcursionDAO.getAllExcursions();
+        });
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return mAllExcursions;
+    }
     public void insert(Excursion excursion){
         databaseExecutor.execute(()->{
             mExcursionDAO.insert(excursion);
