@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".UI.VacationDetails">
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical"
@@ -21,15 +22,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hi!"/>
-                <TextView
+                    android:text="Vacation Title"/>
+                <EditText
+                    android:id="@+id/vacationtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hi!"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hi!"/>
+                    android:hint="Hawaii"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -38,15 +36,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Low!"/>
-                <TextView
+                    android:text="Stay Location"/>
+                <EditText
+                    android:id="@+id/vacationstaylocation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Low!"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Low!"/>
+                    android:hint="Hotel"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -55,16 +50,39 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hi!"/>
-                <TextView
+                    android:text="Vacation Start Date"/>
+                <EditText
+                    android:id="@+id/vacationstartdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hi!"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hi!"/>
+                    android:hint="06-13-2023"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vacation End Date"/>
+                <EditText
+                    android:id="@+id/vacationenddate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="06-21-2023"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/savevacation"
+                    android:text="Save"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
         </LinearLayout>
 
     </ScrollView>
@@ -77,4 +95,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/baseline_add_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@+id/scrollview"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/excursionrecyclerview"
+        android:layout_width="409dp"
+        android:layout_height="373dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="301dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
