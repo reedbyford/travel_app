@@ -67,14 +67,14 @@ public class ExcursionAdapter extends RecyclerView.Adapter<ExcursionAdapter.Excu
         }
     }
 
-    @Override
-    public int getItemCount() {
-        return mExcursions.size();
-    }
-
     public void setExcursions(List<Excursion> excursions){
         mExcursions = excursions;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public int getItemCount() {
+        return mExcursions.size();
     }
 
 }
